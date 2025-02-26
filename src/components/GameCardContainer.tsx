@@ -4,7 +4,7 @@ interface Props {
   children: ReactNode;
 }
 const GameCardContainer = ({ children }: Props) => {
-  return <Box width="300px">{children}</Box>;
+  return <Box width="100%">{children}</Box>;
 };
 
 export default GameCardContainer;
