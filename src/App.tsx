@@ -27,7 +27,7 @@ function App() {
       }}
       templateColumns={{
         base: "1fr",
-        lg: "235px 1fr",
+        lg: "200px 1fr",
       }}
     >
       <GridItem area={"nav"}>
@@ -44,7 +44,7 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area={"main"}>
-        <Box paddingLeft={10}>
+        <Box paddingLeft={9}>
           <GameHeading gameQuery={gameQuery} />
           <HStack spacing={5} marginBottom={5}>
             <PlatformSelector
