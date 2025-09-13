@@ -18,7 +18,6 @@ interface Props {
 
 const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
   const { data, isLoading, error } = useGnres();
-  console.log(data);
 
   if (error) return null;
 
