@@ -1,8 +1,8 @@
  // *** Creating a Custom Hook for Fetching Games ***
 
 import { useQuery } from "@tanstack/react-query";
-import { GameQuery } from "../App";
 import apiClient, { FetchResponse } from "../services/api-client";
+import useGameQueryStore from "../store";
 import { Platform } from "./usePlatforns";
 
 
@@ -15,8 +15,9 @@ export interface Game {
   rating_top: number;
 }
 
-const useGames = (gameQuery: GameQuery) =>
- useQuery<Game[], Error>({
+const useGames = () =>{
+const gameQuery = useGameQueryStore(s => s.gameQuery)
+  return useQuery<Game[], Error>({
 
   queryKey: ['games', gameQuery],
   queryFn: () => 
@@ -31,6 +32,8 @@ const useGames = (gameQuery: GameQuery) =>
     })
     .then(res => res.data.results),
  })
+}
+ 
 
 export default useGames;
 
