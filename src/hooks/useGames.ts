@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import apiClient, { FetchResponse } from "../services/api-client";
 import useGameQueryStore from "../store";
 import { Platform } from "./usePlatforns";
+import { Genre } from "./useGenres";
 
 
 export interface Game {
@@ -15,6 +16,8 @@ export interface Game {
   parent_platforms: { platform: Platform }[];
   metacritic: number;
   rating_top: number;
+  genres: Genre [];
+  developers: Platform [];
 }
 
 const useGames = () =>{
